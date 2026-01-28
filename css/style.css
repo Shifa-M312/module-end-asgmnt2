@@ -1,0 +1,263 @@
+/* =========================
+   Reset and Base Styles
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* =========================
+   Navbar
+========================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 1.5rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav h1 {
+  color: rgb(40, 88, 140);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  background-color: lightgrey;
+  list-style: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  top: 100%;
+  gap: 12px;
+  width: 180px;
+  right: -250px;
+  transition: right 0.3s ease;
+  padding: 15px;
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(57, 57, 110);
+  font-size: 1rem;
+}
+
+.menuicon {
+  display: block;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menuicon img {
+  width: 30px;
+}
+
+.show {
+  right: 10px;
+}
+
+.nav-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.login-btn,
+.signin-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-btn {
+  background-color: #c4d0dc;
+  color: #000;
+}
+
+.signin-btn {
+  background-color: #1d3e5f;
+  color: #fff;
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  min-height: 100vh;
+  background-image: url("https://images.pexels.com/photos/354103/pexels-photo-354103.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 1.5rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  text-decoration: none;
+  background-color: #232b33;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 5px;
+}
+
+/* =========================
+   Auth Forms (Signup / Signin)
+========================= */
+.form-box {
+  max-width: 420px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1d3e5f;
+}
+
+.form-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-box input:focus {
+  outline: none;
+  border-color: #1d3e5f;
+}
+
+.password-field {
+  display: flex;
+  gap: 8px;
+}
+
+.password-field button {
+  background: #1d3e5f;
+  color: #fff;
+  border: none;
+  padding: 0 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-box button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #1d3e5f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.form-box p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* =========================
+   Responsive Navbar
+========================= */
+@media (min-width: 769px) {
+  .menuicon {
+    display: none;
+  }
+
+  nav ul {
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    width: auto;
+    box-shadow: none;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+/* =========================
+   Mobile Hero
+========================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .form-box {
+    margin: 40px 15px;
+  }
+}
