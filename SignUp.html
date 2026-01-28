@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="form-box">
+    <h2>Sign Up</h2>
+    <form onsubmit="register(); return false;">
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" required>
+      <div id="fullnameError" class="error"></div>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+      <div id="emailError" class="error"></div>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" required>
+      <div id="phoneError" class="error"></div>
+
+      <label for="location">Location/City</label>
+      <input type="text" id="location" required>
+      <div id="locationError" class="error"></div>
+
+      <label for="password">Password</label>
+      <div class="password-field">
+        <input type="password" id="password" required>
+        <button type="button" onclick="togglePassword('password')"
+          aria-label="Toggle password visibility">Show/Hide</button>
+      </div>
+      <div id="passwordError" class="error"></div>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <div class="password-field">
+        <input type="password" id="confirmPassword" required>
+        <button type="button" onclick="togglePassword('confirmPassword')"
+          aria-label="Toggle password visibility">Show/Hide</button>
+      </div>
+      <div id="confirmPasswordError" class="error"></div>
+
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="SignIn.html">Sign In</a></p>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
